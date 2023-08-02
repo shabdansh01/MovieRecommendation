@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/recommend">Recommend</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="display-4">Book Recommendation System</h1>
+
+        <h2>Top 50 Books:</h2>
+        <div class="row">
+            {% for i in range(book_name|length) %}
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{{ image[i] }}" class="card-img-top" alt="Book Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Title: {{ book_name[i] }}</h5>
+                        <p class="card-text">Author: {{ author[i] }}</p>
+                        <p class="card-text">Number of Ratings: {{ no_of_ratings[i] }}</p>
+                        <p class="card-text">Rating: {{ rating[i] }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
